@@ -1,0 +1,124 @@
+{
+  "prompt": "cinematic medium shot of a cyberpunk samurai standing in rain-slicked Tokyo street, glowing neon blue katana, reflective puddle ripples, 8k resolution, photorealistic",
+  "negative_prompt": "blurry, deformed, low quality, bad anatomy, text, watermark",
+  "seed": 42,
+  "steps_list": [
+    5,
+    15,
+    25,
+    50
+  ],
+  "guidance_list": [
+    1.5,
+    7.5,
+    15.0
+  ],
+  "matrix": [
+    [
+      {
+        "steps": 5,
+        "guidance": 1.5,
+        "seed": 42,
+        "clip_score": 31.53,
+        "latency": 0.038,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 5,
+        "guidance": 7.5,
+        "seed": 42,
+        "clip_score": 31.77,
+        "latency": 0.01,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 5,
+        "guidance": 15.0,
+        "seed": 42,
+        "clip_score": 31.95,
+        "latency": 0.015,
+        "nsfw_filtered": false
+      }
+    ],
+    [
+      {
+        "steps": 15,
+        "guidance": 1.5,
+        "seed": 42,
+        "clip_score": 36.0,
+        "latency": 0.009,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 15,
+        "guidance": 7.5,
+        "seed": 42,
+        "clip_score": 36.0,
+        "latency": 0.008,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 15,
+        "guidance": 15.0,
+        "seed": 42,
+        "clip_score": 36.0,
+        "latency": 0.014,
+        "nsfw_filtered": false
+      }
+    ],
+    [
+      {
+        "steps": 25,
+        "guidance": 1.5,
+        "seed": 42,
+        "clip_score": 33.53,
+        "latency": 0.009,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 25,
+        "guidance": 7.5,
+        "seed": 42,
+        "clip_score": 36.0,
+        "latency": 0.009,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 25,
+        "guidance": 15.0,
+        "seed": 42,
+        "clip_score": 36.0,
+        "latency": 0.014,
+        "nsfw_filtered": false
+      }
+    ],
+    [
+      {
+        "steps": 50,
+        "guidance": 1.5,
+        "seed": 42,
+        "clip_score": 26.67,
+        "latency": 0.009,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 50,
+        "guidance": 7.5,
+        "seed": 42,
+        "clip_score": 28.36,
+        "latency": 0.008,
+        "nsfw_filtered": false
+      },
+      {
+        "steps": 50,
+        "guidance": 15.0,
+        "seed": 42,
+        "clip_score": 30.79,
+        "latency": 0.014,
+        "nsfw_filtered": false
+      }
+    ]
+  ],
+  "total_generation_time_sec": 9.42,
+  "model_id": "stabilityai/sd-turbo"
+}

@@ -1,0 +1,70 @@
+{
+  "prompt": "photorealistic studio portrait of an expressive person, 85mm lens, natural lighting",
+  "seed": 42,
+  "dcgan": {
+    "samples_count": 4,
+    "clip_scores": [
+      29.7,
+      28.92,
+      29.41,
+      29.11
+    ],
+    "average_clip": 29.285,
+    "average_latency_ms": 6.745874881744385
+  },
+  "diffusion": {
+    "samples_count": 4,
+    "clip_scores": [
+      36.0,
+      36.0,
+      36.0,
+      36.0
+    ],
+    "average_clip": 36.0,
+    "average_latency_s": 0.010750000000000001
+  },
+  "architectural_comparison": [
+    {
+      "dimension": "Core Architecture",
+      "dcgan": "Generator (ConvTranspose2d) vs Discriminator (Conv2d). Feed-forward latent mapping.",
+      "diffusion": "Denoising U-Net / DiT with cross-attention and time-embedding conditioning.",
+      "advantage": "Diffusion (captures long-range dependencies & semantic context via self/cross-attention)"
+    },
+    {
+      "dimension": "Sampling Trajectory",
+      "dcgan": "Single forward pass (1 step): x = G(z). Deterministic or stochastic.",
+      "diffusion": "Iterative Langevin / reverse SDE denoising over T timesteps (e.g. 20-50 steps, or 1-4 for distilled models).",
+      "advantage": "DCGAN for speed (1-step), Diffusion for progressive quality & controllability"
+    },
+    {
+      "dimension": "Training Objective & Stability",
+      "dcgan": "Adversarial Minimax Loss: min_G max_D E[log D(x)] + E[log(1 - D(G(z)))]. High risk of mode collapse & non-convergence.",
+      "diffusion": "Score Matching / Denoising MSE: E_{t,x0,eps}[||eps - eps_theta(x_t, t)||^2]. Well-behaved, convex, monotonic convergence.",
+      "advantage": "Diffusion (zero mode collapse, stable log-likelihood surrogate)"
+    },
+    {
+      "dimension": "Sample Quality & Resolution",
+      "dcgan": "Typically limited to 64x64 or 128x128. Struggles with high-frequency textures, symmetry, and fine hands/faces.",
+      "diffusion": "State-of-the-art 512x512 / 1024x1024 photorealism with intricate photorealistic micro-details.",
+      "advantage": "Diffusion (vastly superior photorealism & detail fidelity)"
+    },
+    {
+      "dimension": "Mode Coverage & Diversity",
+      "dcgan": "Prone to mode dropping; discriminator rejects rare modes. Truncation trick needed.",
+      "diffusion": "Full mode coverage covering the empirical distribution support. High entropy diversity.",
+      "advantage": "Diffusion (reproduces entire distribution without dropping modes)"
+    },
+    {
+      "dimension": "Text Conditioning & Steerability",
+      "dcgan": "Coarse condition concatenation. Struggles with spatial composition and prompt adherence.",
+      "diffusion": "Classifier-Free Guidance (CFG) dynamically balances fidelity vs creativity; text embeddings via CLIP/T5 cross-attention.",
+      "advantage": "Diffusion (superior prompt adherence via CFG & cross-attention)"
+    },
+    {
+      "dimension": "Inference Latency",
+      "dcgan": "~5 - 15 milliseconds on GPU (single forward pass).",
+      "diffusion": "~500ms - 2500ms for SD 1.5; ~80ms - 150ms for SD-Turbo.",
+      "advantage": "DCGAN (instantaneous real-time generation)"
+    }
+  ]
+}
